@@ -1,1 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Class Project</title>
+    </head>
+    <body>
+        <p id="details"></p>
+        <script>
+            // Define a base class with properties and an instance method
+            class Animal {
+                constructor(name, species) {
+                    this.name = name;
+                    this.species = species;
+                }
+
+                // Instance method to display properties
+                present() {
+                    return "I have a " + this.species + " named " + this.name;
+                }
+            }
+
+            // Inherit the Animal class
+            class Dog extends Animal {
+                constructor(name, breed) {
+                    super(name, "Dog");  // Call parent constructor
+                    this.breed = breed;
+                }
+
+                // Method to show inherited and own properties
+                show() {
+                    return this.present() + ", it is a " + this.breed;
+                }
+            }
+
+            // Display the instance method result
+            let myDog = new Dog("Buddy", "Golden Retriever");
+            document.getElementById("details").innerHTML = myDog.show();
+        </script>
+    </body>
+</html>
 
